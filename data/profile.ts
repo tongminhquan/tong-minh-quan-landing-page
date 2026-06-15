@@ -1,6 +1,9 @@
 export const profile = {
   name: "Tống Minh Quân",
   facebookUrl: "https://www.facebook.com/maminhquan69",
+  zaloPhone: "0947192590",
+  zaloUrl: "https://zalo.me/0947192590",
+  avatarUrl: "/tong-minh-quan-avatar.png",
   role: {
     vi: "Thực tập sinh Marketing / Sinh viên Digital Marketing",
     en: "Marketing Intern / Digital Marketing Student",
