@@ -45,7 +45,7 @@ export function FloatingContactCtas({
             alt="Zalo logo"
             fill
             sizes="36px"
-            className="object-cover"
+            className="object-contain"
           />
         </span>
         <span>{locale === "vi" ? "Chat Zalo" : "Chat Zalo"}</span>
