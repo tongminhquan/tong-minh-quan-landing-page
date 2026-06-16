@@ -17,7 +17,7 @@ export const translations = {
         "Tống Minh Quân định vị bản thân là một sinh viên Digital Marketing trẻ trung, chủ động, trách nhiệm và cẩn thận, đang tìm kiếm môi trường thực tập để phát huy thế mạnh giao tiếp, phối hợp nhóm và triển khai nội dung truyền thông hiệu quả.",
       ctaResume: "Xem hồ sơ",
       ctaProject: "Dự án cá nhân",
-      ctaContact: "Liên hệ",
+      ctaContact: "Liên hệ ngay",
       facebook: "Xem Facebook cá nhân",
       highlights: [
         {
@@ -253,7 +253,7 @@ export const translations = {
         "Tong Minh Quan presents himself as a proactive, responsible, detail-oriented Digital Marketing student seeking an internship where he can contribute through communication, team support, and hands-on content execution.",
       ctaResume: "View resume",
       ctaProject: "Personal project",
-      ctaContact: "Contact",
+      ctaContact: "Contact now",
       facebook: "Open personal Facebook",
       highlights: [
         {

@@ -65,7 +65,7 @@ export function Navbar({ locale, setLocale, name, nav }: NavbarProps) {
               key={key}
               href={href}
               className={clsx(
-                "rounded-full border border-transparent px-4 py-2 text-sm text-[var(--color-muted)] hover:border-[var(--color-line)] hover:bg-[var(--color-panel)] hover:text-[var(--color-foreground)]",
+                "whitespace-nowrap rounded-full border border-transparent px-4 py-2 text-sm text-[var(--color-muted)] hover:border-[var(--color-line)] hover:bg-[var(--color-panel)] hover:text-[var(--color-foreground)]",
               )}
             >
               {labels[key]}

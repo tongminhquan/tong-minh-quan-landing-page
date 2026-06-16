@@ -70,6 +70,12 @@ export function Hero({ locale, copy, profile }: HeroProps) {
             >
               {copy.ctaProject}
             </a>
+            <a
+              href="#contact"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-[var(--color-line)] bg-[var(--color-panel)] px-6 py-3 text-sm font-semibold text-[var(--color-foreground)] hover:-translate-y-0.5 hover:border-[var(--color-accent)] active:translate-y-px"
+            >
+              {copy.ctaContact}
+            </a>
           </div>
         </Reveal>
 
@@ -78,7 +84,7 @@ export function Hero({ locale, copy, profile }: HeroProps) {
             {copy.highlights.map((item) => (
               <div
                 key={item.title}
-                className="rounded-[24px] border border-[var(--color-line)] bg-[var(--color-panel)]/92 p-4 shadow-[0_14px_34px_var(--color-shadow)]"
+                className="flex h-full flex-col rounded-[24px] border border-[var(--color-line)] bg-[var(--color-panel)]/92 p-4 shadow-[0_14px_34px_var(--color-shadow)]"
               >
                 <div className="text-sm font-semibold text-[var(--color-foreground)]">
                   {item.title}
