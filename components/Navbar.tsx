@@ -1,8 +1,10 @@
 "use client";
 
 import clsx from "clsx";
+import Image from "next/image";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { profile } from "@/data/profile";
 import { Locale } from "@/data/translations";
 
 type NavbarProps = {
@@ -14,7 +16,6 @@ type NavbarProps = {
     skills: string;
     education: string;
     projects: string;
-    contact: string;
   };
 };
 
@@ -23,7 +24,6 @@ const sectionLinks = [
   { key: "skills", href: "#skills" },
   { key: "education", href: "#education" },
   { key: "projects", href: "#projects" },
-  { key: "contact", href: "#contact" },
 ] as const;
 
 export function Navbar({ locale, setLocale, name, nav }: NavbarProps) {
@@ -32,7 +32,6 @@ export function Navbar({ locale, setLocale, name, nav }: NavbarProps) {
     skills: nav.skills,
     education: nav.education,
     projects: nav.projects,
-    contact: nav.contact,
   };
 
   return (
@@ -42,8 +41,15 @@ export function Navbar({ locale, setLocale, name, nav }: NavbarProps) {
           href="#top"
           className="flex items-center gap-3 text-sm font-medium text-[var(--color-foreground)]"
         >
-          <span className="flex h-11 w-11 items-center justify-center rounded-[16px] bg-[linear-gradient(135deg,var(--color-accent),var(--color-accent-strong))] text-base font-semibold text-white shadow-[0_16px_40px_rgba(79,107,255,0.28)]">
-            TMQ
+          <span className="relative h-11 w-11 overflow-hidden rounded-[16px] border border-white/15 shadow-[0_16px_40px_rgba(79,107,255,0.22)]">
+            <Image
+              src={profile.avatarUrl}
+              alt="Avatar Tống Minh Quân"
+              fill
+              sizes="44px"
+              className="object-cover"
+              priority
+            />
           </span>
           <span className="flex flex-col">
             <span className="text-base font-semibold">{name}</span>

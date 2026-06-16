@@ -1,12 +1,12 @@
 "use client";
 
-import { FacebookLogo, PaperPlaneTilt } from "@phosphor-icons/react/dist/ssr";
+import { PaperPlaneTilt } from "@phosphor-icons/react/dist/ssr";
 import { FormEvent, useState } from "react";
 import { motion } from "motion/react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { Locale, TranslationSet } from "@/data/translations";
 import { profile as profileData } from "@/data/profile";
+import { Locale, TranslationSet } from "@/data/translations";
 
 type ContactProps = {
   locale: Locale;
@@ -14,13 +14,16 @@ type ContactProps = {
   profile: typeof profileData;
 };
 
-export function Contact({ copy, profile }: ContactProps) {
+export function Contact({ copy }: ContactProps) {
   const [status, setStatus] = useState("");
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    console.log("Contact placeholder submission", Object.fromEntries(formData.entries()));
+    console.log(
+      "Contact placeholder submission",
+      Object.fromEntries(formData.entries()),
+    );
     setStatus(copy.success);
     event.currentTarget.reset();
   };
@@ -28,26 +31,11 @@ export function Contact({ copy, profile }: ContactProps) {
   return (
     <section
       id="contact"
-      className="grid gap-6 rounded-[32px] border border-[var(--color-line)] bg-[var(--color-surface)] p-6 shadow-[0_20px_60px_var(--color-shadow)] backdrop-blur-xl sm:p-8 lg:grid-cols-[0.9fr_1.1fr]"
+      className="rounded-[32px] border border-[var(--color-line)] bg-[var(--color-surface)] p-6 shadow-[0_20px_60px_var(--color-shadow)] backdrop-blur-xl sm:p-8"
     >
       <Reveal className="rounded-[28px] border border-[var(--color-line)] bg-[var(--color-panel)] p-6 shadow-[0_16px_40px_var(--color-shadow)]">
         <SectionHeading title={copy.title} description={copy.description} />
-        <div className="mt-8 space-y-4 text-sm leading-7 text-[var(--color-muted)]">
-          <p>{copy.note}</p>
-          <a
-            href={profile.facebookUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[var(--color-line)] px-5 py-3 font-medium text-[var(--color-foreground)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-          >
-            <FacebookLogo size={18} weight="fill" />
-            {copy.facebook}
-          </a>
-        </div>
-      </Reveal>
-
-      <Reveal className="rounded-[28px] border border-[var(--color-line)] bg-[var(--color-panel)] p-6 shadow-[0_16px_40px_var(--color-shadow)]">
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        <form className="space-y-4 pt-8" onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="grid gap-2 text-sm font-medium text-[var(--color-foreground)]">
               {copy.form.name}

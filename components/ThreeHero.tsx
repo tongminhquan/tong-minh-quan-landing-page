@@ -49,7 +49,6 @@ export function ThreeHero({ locale }: ThreeHeroProps) {
       )}
 
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.24),transparent_34%)] dark:bg-[radial-gradient(circle_at_top,rgba(157,176,214,0.12),transparent_34%)]" />
-      <AvatarCard locale={locale} />
       <OrbitBadges />
     </div>
   );
@@ -110,36 +109,6 @@ function Scene({ dark }: { dark: boolean }) {
         </mesh>
       </group>
     </>
-  );
-}
-
-function AvatarCard({ locale }: { locale: Locale }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className="absolute bottom-5 left-5 z-10 max-w-[240px] rounded-[28px] border border-white/28 bg-white/72 p-5 shadow-[0_26px_50px_rgba(31,47,95,0.22)] backdrop-blur-xl dark:border-white/12 dark:bg-slate-950/58 sm:bottom-7 sm:left-7"
-    >
-      <div className="flex items-center gap-4">
-        <div className="flex h-16 w-16 items-center justify-center rounded-[22px] bg-[linear-gradient(135deg,var(--color-accent),var(--color-accent-strong))] text-2xl font-semibold text-white shadow-[0_18px_32px_rgba(79,107,255,0.32)]">
-          TMQ
-        </div>
-        <div>
-          <div className="text-lg font-semibold text-[var(--color-foreground)]">
-            Tống Minh Quân
-          </div>
-          <p className="text-sm text-[var(--color-muted)]">
-            {locale === "vi" ? "Marketing Intern" : "Marketing Intern"}
-          </p>
-        </div>
-      </div>
-      <p className="mt-4 text-sm leading-6 text-[var(--color-muted)]">
-        {locale === "vi"
-          ? "Thẻ nhận diện tối giản khi chưa có ảnh đại diện được xác nhận công khai."
-          : "A clean identity card while no verified public portrait is supplied."}
-      </p>
-    </motion.div>
   );
 }
 

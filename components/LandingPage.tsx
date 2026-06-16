@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { About } from "@/components/About";
 import { Activities } from "@/components/Activities";
 import { Awards } from "@/components/Awards";
-import { Contact } from "@/components/Contact";
 import { Education } from "@/components/Education";
+import { FloatingContactCtas } from "@/components/FloatingContactCtas";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
@@ -47,8 +47,8 @@ export function LandingPage() {
         <Projects locale={locale} copy={copy.projects} profile={profile} />
         <Activities locale={locale} copy={copy.activities} profile={profile} />
         <Awards locale={locale} copy={copy.awards} profile={profile} />
-        <Contact locale={locale} copy={copy.contact} profile={profile} />
       </main>
+      <FloatingContactCtas locale={locale} profile={profile} />
       <Footer locale={locale} copy={copy.footer} profile={profile} />
     </div>
   );

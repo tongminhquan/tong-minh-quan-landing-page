@@ -3,7 +3,8 @@ import { JetBrains_Mono, Outfit } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://xn--maminhqun-i2a.vn";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -17,6 +18,9 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: siteUrl,
+  },
   title: "Tống Minh Quân | Marketing Intern & Digital Marketing Student",
   description:
     "Landing page cá nhân giới thiệu Tống Minh Quân, sinh viên Digital Marketing, thực tập sinh marketing, có kinh nghiệm quản lý mạng xã hội, thiết kế Canva và phát triển dự án Nhà Nấm Nhỏ.",
@@ -33,6 +37,7 @@ export const metadata: Metadata = {
     description:
       "Bilingual personal landing page for Tống Minh Quân, focused on content planning, social media coordination, Canva design, and student-led brand building.",
     type: "website",
+    url: siteUrl,
     locale: "vi_VN",
     siteName: "Tong Minh Quan",
   },

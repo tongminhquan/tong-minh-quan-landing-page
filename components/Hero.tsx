@@ -1,11 +1,11 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { ArrowUpRight, FacebookLogo, Sparkle, Student } from "@phosphor-icons/react/dist/ssr";
+import { Sparkle } from "@phosphor-icons/react/dist/ssr";
 import { useReducedMotion } from "motion/react";
-import { Locale, TranslationSet } from "@/data/translations";
-import { profile as profileData } from "@/data/profile";
 import { Reveal } from "@/components/Reveal";
+import { profile as profileData } from "@/data/profile";
+import { Locale, TranslationSet } from "@/data/translations";
 
 const ThreeHero = dynamic(
   () => import("@/components/ThreeHero").then((mod) => mod.ThreeHero),
@@ -70,12 +70,6 @@ export function Hero({ locale, copy, profile }: HeroProps) {
             >
               {copy.ctaProject}
             </a>
-            <a
-              href="#contact"
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-[var(--color-line)] bg-transparent px-6 py-3 text-sm font-semibold text-[var(--color-foreground)] hover:bg-[var(--color-panel)] hover:-translate-y-0.5 active:translate-y-px"
-            >
-              {copy.ctaContact}
-            </a>
           </div>
         </Reveal>
 
@@ -94,27 +88,6 @@ export function Hero({ locale, copy, profile }: HeroProps) {
                 </p>
               </div>
             ))}
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.2}>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-[var(--color-muted)]">
-            <a
-              href={profile.facebookUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[var(--color-line)] bg-[var(--color-panel)] px-5 py-3 font-medium text-[var(--color-foreground)] hover:-translate-y-0.5 hover:border-[var(--color-accent)] active:translate-y-px"
-            >
-              <FacebookLogo size={18} weight="fill" />
-              {copy.facebook}
-              <ArrowUpRight size={16} />
-            </a>
-            <span className="inline-flex items-center gap-2">
-              <Student size={18} className="text-[var(--color-accent)]" />
-              {locale === "vi"
-                ? "Nội dung song ngữ, dữ liệu ưu tiên từ CV và nguồn công khai."
-                : "Bilingual content built from the provided CV and accessible public sources."}
-            </span>
           </div>
         </Reveal>
       </div>
